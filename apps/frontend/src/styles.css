@@ -1,3 +1,40 @@
-/* You can add global styles to this file, and also import other style files */
-
 @import 'tailwindcss';
+
+:root {
+    --font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --color-maritime-dark: #003366;
+    --color-maritime-primary: #1565C0;
+    --color-maritime-hover: #0D47A1;
+    --color-maritime-light: #E3F2FD;
+
+    --color-status-success: #2E7D32;
+    --color-status-warning: #F9A825;
+    --color-status-critical: #C62828;
+
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 1.875rem;
+}
+
+@theme {
+    --color-maritime-dark: #003366;
+    --color-maritime-primary: #1565C0;
+    --color-maritime-hover: #0D47A1;
+    --color-maritime-light: #E3F2FD;
+
+    --color-status-success: #2E7D32;
+    --color-status-warning: #F9A825;
+    --color-status-critical: #C62828;
+}
+
+@layer base {
+
+    html,
+    body,
+    * {
+        font-family: var(--font-family-base);
+    }
+}

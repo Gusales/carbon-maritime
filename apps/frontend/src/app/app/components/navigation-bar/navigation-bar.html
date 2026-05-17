@@ -1,0 +1,52 @@
+<aside class="min-h-full flex flex-col w-64 bg-maritime-dark text-white">
+    <header class="px-8 pt-8">
+        <h1 class="text-xl font-medium mb-2">Calculadora de Pegada de Carbono</h1>
+        <p class="text-blue-200 text-sm">Logística Marítima</p>
+    </header>
+
+    <nav class="flex-1 p-8">
+        <ul class="space-y-2">
+            <li>
+                <a routerLink="/"
+                    class="flex items-center gap-3 px-2 py-3 rounded-lg transition-colors text-blue-100 hover:bg-maritime-hover"
+                    routerLinkActive="bg-maritime-primary text-white">
+                    <lucide-icon [img]="Ship" size="20" />
+                    Dashboard
+                </a>
+            </li>
+            <li>
+                <a routerLink="/new-vessel"
+                    class="flex items-center gap-3 px-2 py-3 rounded-lg transition-colors text-blue-100 hover:bg-maritime-hover"
+                    routerLinkActive="bg-maritime-primary text-white">
+                    <lucide-icon [img]="Plus" size="20" />
+                    Nova Embarcação
+                </a>
+            </li>
+            <li>
+                <a routerLink="/calculate-route"
+                    class="flex items-center gap-3 px-2 py-3 rounded-lg transition-colors text-blue-100 hover:bg-maritime-hover"
+                    routerLinkActive="bg-maritime-primary text-white">
+                    <lucide-icon [img]="Route" size="20" />
+                    Calcular Rota
+                </a>
+            </li>
+            <li>
+                <a routerLink="/history"
+                    class="flex items-center gap-3 px-2 py-3 rounded-lg transition-colors text-blue-100 hover:bg-maritime-hover"
+                    routerLinkActive="bg-maritime-primary text-white">
+                    <lucide-icon [img]="History" size="20" />
+                    Histórico
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <footer class="border-t w-full border-blue-500 text-blue-200 pl-2 py-2 text-xs text-left self-start">
+        <p>
+            <a href="https://www.iso.org/standard/78864.html" target="_blank" rel="noopener noreferrer"
+                class="hover:underline underline-offset-2">ISO 14083</a> / <a
+                href="https://wwwcdn.imo.org/localresources/en/KnowledgeCentre/IndexofIMOResolutions/MEPCDocuments/MEPC.245(66).pdf"
+                target="_blank" rel="noopener noreferrer" class="hover:underline underline-offset-2">IMO MEPC.245</a>
+        </p>
+    </footer>
+</aside>
