@@ -1,3 +1,12 @@
 <main>
-    <h1>Hello World</h1>
+    <section class="mb-8">
+        <h2 class="mb-2">Dashboard</h2>
+        <p class="text-gray-600">Visão geral das emissões de carbono</p>
+    </section>
+
+    <section id="summary" class="grid grid-cols-3 gap-6 w-full">
+        <app-summary-card *ngFor="let summaryCard of summaryCards" [cardType]="summaryCard.type"
+            [value]="summaryCard.value">
+        </app-summary-card>
+    </section>
 </main>

@@ -37,4 +37,11 @@
     * {
         font-family: var(--font-family-base);
     }
+
+    h2 {
+        font-size: var(--text-3xl);
+        font-weight: var(--font-weight-medium);
+        color: var(--color-maritime-dark);
+        margin-bottom: var(2rem);
+    }
 }
