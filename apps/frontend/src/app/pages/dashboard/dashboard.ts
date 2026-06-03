@@ -1,14 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { SummaryCard } from '@components/summary-card/summary-card';
+import { SummaryCard } from 'app/pages/dashboard/components/summary-card/summary-card';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-dashboard',
   imports: [CommonModule, SummaryCard],
-  templateUrl: './home.html',
-  styleUrl: './home.css',
+  templateUrl: './dashboard.html',
 })
-export class Home {
+export class Dashboard {
   public readonly summaryCards = [
     { type: 'appropriate' as const, value: 120 },
     { type: 'attention' as const, value: 75 },
