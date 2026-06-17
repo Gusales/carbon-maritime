@@ -1,3 +1,74 @@
 <main>
-    <h1>Historico</h1>
+  <header>
+    <h2>Histórico de Rotas</h2>
+    <p>Análises anteriores de emissões de carbono</p>
+  </header>
+
+  <section class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 space-y-6">
+    <div class="flex items-center gap-4">
+      <lucide-icon [name]="FunnelIcon" size="24" class="text-gray-600" />
+      <h3>Filtrar por Status</h3>
+    </div>
+
+    <app-toogle-group [options]="filterOptions" />
+  </section>
+
+  <section class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden mt-8">
+    <div class="overflow-x-auto">
+      <table class="w-full">
+        <thead class="border-b border-gray-200">
+          <tr>
+            <th class="px-6 py-3 text-left text-sm font-medium text-gray-700">Rota</th>
+            <th class="px-6 py-3 text-left text-sm font-medium text-gray-700">Embarcação</th>
+            <th class="px-6 py-3 text-left text-sm font-medium text-gray-700">ICO₂</th>
+            <th class="px-6 py-3 text-left text-sm font-medium text-gray-700">Status</th>
+            <th class="px-6 py-3 text-left text-sm font-medium text-gray-700">Data</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200">
+          @for (ship of recentRoutes; track $index) {
+            <tr class="hover:bg-gray-50">
+              <td class="px-6 py-4">
+                <div class="text-sm text-gray-900">{{ ship.origin }}</div>
+                <div class="text-sm text-gray-500">→ {{ ship.destination }}</div>
+              </td>
+              <td class="px-6 py-4 text-sm text-gray-900">{{ ship.vessel }}</td>
+              <td class="px-6 py-4 text-sm text-gray-900 font-medium">
+                {{ ship.ico2.toFixed(1) }} gCO₂/t·nm
+              </td>
+              <td class="px-6 py-4">
+                @switch (ship.status) {
+                  @case ('appropriate') {
+                    <span
+                      class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium text-white cursor-help bg-status-success"
+                    >
+                      <lucide-icon [img]="CheckIcon" size="14" aria-hidden="true" /> Adequado
+                    </span>
+                  }
+                  @case ('attention') {
+                    <span
+                      class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium text-white cursor-help bg-status-warning"
+                    >
+                      <lucide-icon [img]="AlertIcon" size="14" aria-hidden="true" /> Atenção
+                    </span>
+                  }
+                  @case ('critical') {
+                    <span
+                      class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium text-white cursor-help bg-status-critical"
+                    >
+                      <lucide-icon [img]="XIcon" size="14" aria-hidden="true" /> Crítico
+                    </span>
+                  }
+                }
+              </td>
+
+              <td class="px-6 py-4 text-sm text-gray-500">
+                {{ formatDate(ship.date) }}
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </section>
 </main>
