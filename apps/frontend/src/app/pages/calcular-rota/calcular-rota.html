@@ -1,3 +1,23 @@
-<main>
-    <h1>Calcular Rota</h1>
+<main class="max-w-4xl mx-auto space-y-8">
+  <header class="mb-8">
+    <h2 class="mb-2">Calcular Emissão de Rota</h2>
+    <p class="text-gray-600">Informe os dados da rota para análise de emissões</p>
+  </header>
+
+  <section>
+    <app-form-calcular-emissao />
+  </section>
+
+  <article class="bg-maritime-light rounded-lg p-6 border-l-4 border-maritime-primary flex gap-3">
+    <div>
+      <lucide-icon [img]="CalculatorIcon" size="24" class="text-maritime-primary shrink-0" />
+    </div>
+    <div>
+      <h3 class="font-medium text-gray-800 mb-1">Metodologia</h3>
+      <p class="text-sm text-gray-700">
+        O cálculo segue as diretrizes da ISO 14083 e IMO MEPC.245, considerando a intensidade de
+        carbono (ICO₂) em gramas de CO₂ por tonelada de carga por milha náutica.
+      </p>
+    </div>
+  </article>
 </main>

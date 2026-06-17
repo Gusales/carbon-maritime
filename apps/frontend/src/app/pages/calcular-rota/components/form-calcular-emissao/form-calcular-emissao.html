@@ -1,0 +1,39 @@
+<form
+  class="bg-white rounded-l-2xl text-maritime-dark mb-2 shadow-sm border-gray-200 p-8 space-y-8"
+>
+  <div class="grid grid-cols-2 gap-6">
+    <div>
+      <app-label>Ponto de Origem</app-label>
+      <app-input placeholder="Ex: Santos (BR)" />
+    </div>
+    <div>
+      <app-label>Ponto de Destino</app-label>
+      <app-input placeholder="Ex: Rotterdam (NL)" />
+    </div>
+  </div>
+
+  <div class="grid grid-cols-2 gap-6">
+    <div>
+      <app-label>Distância (milhas náuticas)</app-label>
+      <app-input placeholder="Ex: 5280" type="number" />
+    </div>
+    <div>
+      <app-label>Ponto de Destino</app-label>
+      <app-select [options]="vessels" />
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <div class="lg:col-span-2">
+      <app-label>Carga (Toneladas)</app-label>
+      <app-input type="number" id="cargo" placeholder="Ex: 2500" name="cargo" />
+    </div>
+  </div>
+
+  <div class="w-full flex justify-end">
+    <app-button>
+      <lucide-icon [img]="CalculatorIcon" size="20" />
+      Calcular Emissão
+    </app-button>
+  </div>
+</form>
