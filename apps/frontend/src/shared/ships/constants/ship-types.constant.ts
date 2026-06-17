@@ -1,0 +1,1 @@
+export const VESSEL_TYPES = ['Graneleiro', 'Porta-contêiner', 'Petroleiro', 'Cruzeiro', 'Ro-Ro']

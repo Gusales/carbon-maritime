@@ -1,0 +1,7 @@
+<select [value]="value" [disabled]="isDisabled" (change)="onSelect($event)" (blur)="onBlur()"
+    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-maritime-primary focus:border-transparent min-h-11 bg-white">
+    <option value="" disabled>{{ placeholder }}</option>
+    @for (option of options; track option.value) {
+    <option [value]="option.value">{{ option.label }}</option>
+    }
+</select>

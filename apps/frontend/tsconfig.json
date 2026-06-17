@@ -20,7 +20,7 @@
         "shared/*"
       ],
       "@components/*": [
-        "app/pages/home/components/*"
+        "app/components/*"
       ]
     },
   },

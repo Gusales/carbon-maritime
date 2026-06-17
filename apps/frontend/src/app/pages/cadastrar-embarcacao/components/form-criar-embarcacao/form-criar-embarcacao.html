@@ -1,0 +1,61 @@
+<form
+  class="bg-white rounded-lg text-maritime-dark mb-2 shadow-sm border border-gray-200 p-8 space-y-8"
+>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <!--* Nome da Embarcação *-->
+    <div class="lg:col-span-2">
+      <app-label for="shipName" class="block text-sm font-medium text-gray-700 mb-2"
+        >Nome da Embarcação</app-label
+      >
+      <app-input type="text" id="shipName" name="shipName" placeholder="Ex: Navio Alpha" />
+    </div>
+  </div>
+
+  <div class="grid grid-cols-2 gap-6">
+    <div>
+      <app-label for="ship-type">Tipo de Embarcação</app-label>
+      <app-select id="ship-type" name="ship-type" [options]="vesselTypeOptions"></app-select>
+    </div>
+
+    <div>
+      <app-label for="vessel-capacity">Capacidade (DWT/GT)</app-label>
+      <app-input type="text" id="vessel-capacity" name="vessel-capacity" placeholder="Ex: 5000" />
+    </div>
+  </div>
+
+  <div class="grid grid-cols-2 gap-6">
+    <div>
+      <app-label for="vessel-fuel-type">Tipo de Combustível</app-label>
+      <app-select
+        id="vessel-fuel-type"
+        name="vessel-fuel-type"
+        [options]="vesselFuelTypesOptions"
+      />
+    </div>
+
+    <div>
+      <app-label for="ship">Consumo Médio (t/dia)</app-label>
+      <app-input type="text" id="ship" name="ship" placeholder="Ex: 45" />
+    </div>
+  </div>
+
+  <div class="w-full flex justify-end">
+    <app-button>
+      <lucide-icon [img]="SaveIcon" size="20" />
+      Cadastrar embarcação
+    </app-button>
+  </div>
+</form>
+
+<article class="bg-maritime-light rounded-lg p-6 border-l-4 flex gap-3">
+  <div>
+    <lucide-icon [img]="ShipIcon" size="24" class="text-maritime-primary shrink-0" />
+  </div>
+  <div>
+    <h3 class="font-medium text-gray-800 mb-1">Informação</h3>
+    <p class="text-sm text-gray-700">
+      Os dados da embarcação são necessários para calcular com precisão as emissões de CO₂ de acordo
+      com as normativas ISO 14083 e IMO MEPC.245.
+    </p>
+  </div>
+</article>
