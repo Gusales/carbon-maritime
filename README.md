@@ -1,6 +1,6 @@
 # 🌊 Carbon Maritime
 
-![Go Version](https://img.shields.io/badge/go-1.22%2B-00ADD8?logo=go)
+![Node.js Version](https://img.shields.io/badge/Node.js-24%2B-339933?logo=node.js)
 ![Angular](https://img.shields.io/badge/Angular-18%2B-DD0031?logo=angular)
 ![MongoDB](https://img.shields.io/badge/MongoDB-7.0%2B-47A248?logo=mongodb)
 ![Docker](https://img.shields.io/badge/Docker-Enabled-2496ED?logo=docker)
@@ -36,56 +36,61 @@ A partir de variáveis operacionais como distância percorrida (milhas náuticas
 
 ## 🚀 Tecnologias
 
-| Camada | Tecnologia |
-| :--- | :--- |
-| **Frontend** | Angular 18+, TypeScript, TailwindCSS |
-| **Backend** | Go 1.22+ |
-| **Banco de Dados** | MongoDB 7.0+ |
-| **Containerização** | Docker & Docker Compose |
+| Camada              | Tecnologia                           |
+| :------------------ | :----------------------------------- |
+| **Frontend**        | Angular 18+, TypeScript, TailwindCSS |
+| **Backend**         | Go 1.22+                             |
+| **Banco de Dados**  | MongoDB 7.0+                         |
+| **Containerização** | Docker & Docker Compose              |
 
 ---
 
 ## ✨ Funcionalidade
 
-| Funcionalidade | Descrição | Status |
-| :--- | :--- | :---: |
-| **Cadastro de Embarcações** | Registro de nome, tipo, porte, combustível e consumo médio | ✅ |
-| **Cálculo de Rotas** | Entrada de origem, destino, distância, embarcação e carga | ✅ |
-| **Classificação Semáforo** | Classificação visual imediata em verde, amarelo ou vermelho | ✅ |
-| **Índice ICO₂** | Exibição do valor calculado em gCO₂/t·nm | ✅ |
-| **Histórico de Rotas** | Consulta e filtragem de rotas por status ambiental | ✅ |
-| **Dashboard** | Visão geral das rotas adequadas, em atenção e críticas | ✅ |
+| Funcionalidade              | Descrição                                                   | Status |
+| :-------------------------- | :---------------------------------------------------------- | :----: |
+| **Cadastro de Embarcações** | Registro de nome, tipo, porte, combustível e consumo médio  |   ✅   |
+| **Cálculo de Rotas**        | Entrada de origem, destino, distância, embarcação e carga   |   ✅   |
+| **Classificação Semáforo**  | Classificação visual imediata em verde, amarelo ou vermelho |   ✅   |
+| **Índice ICO₂**             | Exibição do valor calculado em gCO₂/t·nm                    |   ✅   |
+| **Histórico de Rotas**      | Consulta e filtragem de rotas por status ambiental          |   ✅   |
+| **Dashboard**               | Visão geral das rotas adequadas, em atenção e críticas      |   ✅   |
 
 ---
 
 ## ⚡ Como rodar
 
 ### Pré-requisitos
+
 - [Docker](https://www.docker.com/) e Docker Compose instalados.
 
 ### Passo a Passo
 
 1. **Clone o repositório:**
-    ```bash
-    git clone https://github.com/seu-usuario/carbon-maritime.git
-    cd carbon-maritime
-    ```
+
+   ```bash
+   git clone https://github.com/seu-usuario/carbon-maritime.git
+   cd carbon-maritime
+   ```
 
 2. **Configure as variáveis de ambiente:**
-    ```bash
-    cp .env.example .env
-    ```
+
+   ```bash
+   cp .env.example .env
+   ```
 
 3. **Suba o ambiente com Docker:**
-    ```bash
-    cd apps
-    docker-compose up --build
-    ```
-    *Isso inicializa o backend, frontend e o banco de dados MongoDB.*
+
+   ```bash
+   cd apps
+   docker-compose up --build
+   ```
+
+   _Isso inicializa o backend, frontend e o banco de dados MongoDB._
 
 4. **Acesse a aplicação:**
-    - Frontend: `http://localhost:4200`
-    - Backend: `http://localhost:8080`
+   - Frontend: `http://localhost:4200`
+   - Backend: `http://localhost:8080`
 
 ---
 
@@ -99,11 +104,11 @@ ICO₂ = (Consumo total de combustível × Fator de emissão Cf) ÷ (Capacidade 
 
 **Fatores de emissão por tipo de combustível (fixos):**
 
-| Combustível | Fator de Emissão |
-| :--- | :--- |
-| HFO (Óleo Combustível Pesado) | 3,114 kgCO₂/kg |
-| MDO/MGO (Óleo Diesel Marinho) | 3,206 kgCO₂/kg |
-| LNG (Gás Natural Liquefeito) | 2,750 kgCO₂/kg |
+| Combustível                   | Fator de Emissão |
+| :---------------------------- | :--------------- |
+| HFO (Óleo Combustível Pesado) | 3,114 kgCO₂/kg   |
+| MDO/MGO (Óleo Diesel Marinho) | 3,206 kgCO₂/kg   |
+| LNG (Gás Natural Liquefeito)  | 2,750 kgCO₂/kg   |
 
 ---
 
