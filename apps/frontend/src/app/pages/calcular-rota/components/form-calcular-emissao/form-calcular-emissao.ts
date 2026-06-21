@@ -21,10 +21,22 @@ import { Calculator, LucideAngularModule } from 'lucide-angular';
 export class FormCalcularEmissao {
   public readonly CalculatorIcon = Calculator;
 
-  public vessels: SelectOption[] = [
+  public readonly vessels: SelectOption[] = [
     {
       label: 'Navio Alfa',
-      value: 'Navio Alfa',
+      value: 'alfa',
+    },
+    {
+      label: 'Navio Beta',
+      value: 'beta',
+    },
+    {
+      label: 'Navio Gamma',
+      value: 'gamma',
+    },
+    {
+      label: 'Navio Delta',
+      value: 'delta',
     },
   ];
 }
