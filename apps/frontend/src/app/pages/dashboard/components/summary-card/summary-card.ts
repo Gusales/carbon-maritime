@@ -1,44 +1,69 @@
-import { Component, Input } from "@angular/core";
-import { StatusEnum } from "@shared/status/enums";
-import { StatusType } from "@shared/status/types";
+import { Component, Input } from '@angular/core';
+import { StatusEnum } from '@shared/status/enums';
+import {
+  CircleCheckBig,
+  CircleX,
+  LucideAngularModule,
+  LucideIconData,
+  TriangleAlert
+} from 'lucide-angular';
 
 export const defaultCardTitle = new Map<StatusEnum, string>([
-    [StatusEnum.APPROPRIATE, 'Rotas Adequadas'],
-    [StatusEnum.ATTENTION, 'Rotas em Atenção'],
-    [StatusEnum.CRITICAL, 'Rotas Críticas']
-])
+  [StatusEnum.APPROPRIATE, 'Rotas Adequadas'],
+  [StatusEnum.ATTENTION, 'Rotas em Atenção'],
+  [StatusEnum.CRITICAL, 'Rotas Críticas'],
+]);
 
 @Component({
-    selector: 'app-summary-card',
-    imports: [],
-    templateUrl: './summary-card.html'
+  selector: 'app-summary-card',
+  imports: [LucideAngularModule],
+  templateUrl: './summary-card.html',
 })
 export class SummaryCard {
-    @Input() cardType: StatusType = 'appropriate'
-    @Input() value: number = 0
-    cardHeaderTitle: string = ''
+  @Input() cardType: StatusEnum = StatusEnum.APPROPRIATE;
+  @Input() value: number = 0;
 
-    constructor() {
-        this.cardHeaderTitle = defaultCardTitle.get(StatusEnum[this.cardType.toUpperCase() as Uppercase<StatusType>]) || 'Rotas Adequadas';
-    }
+  get cardHeaderTitle(): string {
+    return defaultCardTitle.get(this.cardType) || 'Rotas Adequadas';
+  }
 
-    get borderClass(): string {
-        const classes: Record<StatusType, string> = {
-            appropriate: 'border-status-success',
-            attention: 'border-status-warning',
-            critical: 'border-status-critical'
-        }
+  get getBorderClass(): string {
+    const classes: Record<StatusEnum, string> = {
+      [StatusEnum.APPROPRIATE]: 'border-status-success',
+      [StatusEnum.ATTENTION]: 'border-status-warning',
+      [StatusEnum.CRITICAL]: 'border-status-critical',
+    };
 
-        return classes[this.cardType]
-    }
+    return classes[this.cardType];
+  }
 
-    get getTextColor(): string {
-        const classes: Record<StatusType, string> = {
-            appropriate: 'text-status-success',
-            attention: 'text-status-warning',
-            critical: 'text-status-critical'
-        }
+  get getStatusColor(): string {
+    const classes: Record<StatusEnum, string> = {
+      [StatusEnum.APPROPRIATE]: 'text-status-success',
+      [StatusEnum.ATTENTION]: 'text-status-warning',
+      [StatusEnum.CRITICAL]: 'text-status-critical',
+    };
 
-        return classes[this.cardType]
-    }
+    return classes[this.cardType];
+  }
+
+  get getTextColor(): string {
+    const classes: Record<StatusEnum, string> = {
+      [StatusEnum.APPROPRIATE]: 'text-status-success',
+      [StatusEnum.ATTENTION]: 'text-status-warning',
+      [StatusEnum.CRITICAL]: 'text-status-critical',
+    };
+
+    return classes[this.cardType];
+  }
+
+  get getStatusIcon(): LucideIconData {
+    const icons: Record<StatusEnum, LucideIconData> = {
+      [StatusEnum.APPROPRIATE]: CircleCheckBig,
+      [StatusEnum.ATTENTION]: TriangleAlert,
+      [StatusEnum.CRITICAL]: CircleX,
+    };
+
+    return icons[this.cardType];
+  }
 }

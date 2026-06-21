@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { StatusEnum } from '@shared/status/enums';
 import { StatusType } from '@shared/status/types';
 import { SummaryCard } from 'app/pages/dashboard/components/summary-card/summary-card';
 import {
@@ -23,7 +24,7 @@ interface ShipRoute {
 }
 
 interface ISummaryCard {
-  type: StatusType;
+  type: StatusEnum;
   value: number;
 }
 
@@ -34,9 +35,9 @@ interface ISummaryCard {
 })
 export class Dashboard {
   public readonly summaryCards: ISummaryCard[] = [
-    { type: 'appropriate' as const, value: 120 },
-    { type: 'attention' as const, value: 75 },
-    { type: 'critical' as const, value: 45 },
+    { type: StatusEnum.APPROPRIATE, value: 120 },
+    { type: StatusEnum.ATTENTION, value: 75 },
+    { type: StatusEnum.CRITICAL, value: 45 },
   ];
 
   public readonly recentRoutes: ShipRoute[] = [

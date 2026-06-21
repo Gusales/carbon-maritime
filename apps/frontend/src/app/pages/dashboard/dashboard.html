@@ -6,10 +6,7 @@
 
   <section id="summary" class="grid grid-cols-3 gap-6 w-full">
     @for (summaryCard of summaryCards; track $index) {
-      <app-summary-card
-        [cardType]="summaryCard.type"
-        [value]="summaryCard.value"
-      ></app-summary-card>
+      <app-summary-card [cardType]="summaryCard.type" [value]="summaryCard.value" />
     }
   </section>
 
